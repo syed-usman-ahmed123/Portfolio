@@ -56,10 +56,7 @@ export default function RootLayout({ children }) {
    
       <body className={`${geistSans.className} min-h-full flex flex-col text-[var(--primary-text)] bg-[var(--primary-bg)]`}>
         <Providers>
-        
           <Navbar /> 
-          
-        
           <main className="flex-grow">
             {children}
           </main>
