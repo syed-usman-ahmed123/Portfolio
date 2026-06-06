@@ -28,7 +28,7 @@ export default function Hero() {
             {/* Action Buttons (Using Pure Variables & No Hardcoded Black/White) */}
             <div className="flex flex-wrap gap-4">
               <Link 
-                href="#work" 
+                href="#projects" 
                 className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-medium px-7 py-3.5 rounded-full btn-hover-slide transition-opacity text-sm"
               >
                 View my work
