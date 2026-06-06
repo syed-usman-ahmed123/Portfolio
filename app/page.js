@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import Experience from "@/components/experience";
 
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
     <main>
       <Hero/>
+      <Experience/>
     </main>
     </>
   );
