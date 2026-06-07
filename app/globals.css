@@ -2,38 +2,25 @@
 
 :root {
   /* Light Theme */
-
   --primary-bg: #ffffff;
-  /* dark mode ka black */
   --secondary-bg: #f3f4f6;
-  /* light gray */
-
   --primary-text: #111827;
-  /* dark text */
   --secondary-text: #6b7280;
-  /* gray text */
-
   --accent: #3b82f6;
   --section-bg: #f5f5f7;
-  /* blue */
+  --card-border: rgba(0, 0, 0, 0.06);
+
 }
 
 .dark {
   /* Dark Theme */
-
   --primary-bg: #0a0a0a;
-  /* black */
   --secondary-bg: #1f2937;
-  /* dark gray/card */
-
   --primary-text: #ffffff;
-  /* white */
   --secondary-text: #9ca3af;
-  /* light gray */
-
   --accent: #3b82f6;
   --section-bg: #121212;
-  /* same blue */
+  --card-border: rgba(255, 255, 255, 0.08);
 }
 
 

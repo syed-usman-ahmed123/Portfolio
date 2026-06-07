@@ -3,8 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-// Swiper core styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -19,7 +17,7 @@ export default function ProjectsPremiumSlider() {
       tags: ["Next.js", "JavaScript", "Tailwind", "Stripe"],
       liveUrl: "https://demo.example.com",
       githubUrl: "https://github.com",
-    // add project img
+      // add project img
     },
     {
       id: 2,
@@ -39,7 +37,7 @@ export default function ProjectsPremiumSlider() {
       tags: ["React Native", "Expo", "Redux Toolkit"],
       liveUrl: "https://demo.example.com",
       githubUrl: "https://github.com",
-       // add project img
+      // add project img
     },
     {
       id: 4,
@@ -55,10 +53,9 @@ export default function ProjectsPremiumSlider() {
 
   return (
     <section className="py-24 bg-[var(--section-bg)] transition-colors duration-300" id="projects">
-      {/* Section Width changed to max-w-6xl to match all other sections */}
-      <div className="max-w-6xl mx-auto px-6 w-full">
-        
-        {/* Section Header - Fixed Size to 4xl/5xl & Line Removed */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+
+        {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] mb-2">
             My Portfolio
@@ -68,8 +65,8 @@ export default function ProjectsPremiumSlider() {
           </h2>
         </div>
 
-        {/* Premium Swiper Slider Container - Outer padding adjusted for full stretch */}
-        <div className="w-full relative ">
+        {/* Swiper Slider Container */}
+        <div className="w-full relative project-slider">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
@@ -81,23 +78,28 @@ export default function ProjectsPremiumSlider() {
               disableOnInteraction: false,
               pauseOnMouseEnter: true
             }}
-            pagination={{ 
+            pagination={{
               clickable: true,
               dynamicBullets: true
             }}
-            navigation={true}
+
+            navigation={{
+              nextEl: '.custom-next',
+              prevEl: '.custom-prev',
+            }}
             breakpoints={{
-              // Desktop aur Laptop par poori width mein sirf 2 cards dikhane k liye
               640: { slidesPerView: 2, spaceBetween: 24 },
               1024: { slidesPerView: 2, spaceBetween: 30 }
             }}
             className="mySwiper !pb-16"
           >
             {projectsData.map((project) => (
-              <SwiperSlide key={project.id} className="h-auto">
-                <div className="bg-[var(--section-bg)] rounded-2xl overflow-hidden border border-[var(--border-color,rgba(0,0,0,0.05))] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
-                  
-                  {/* Next.js Optimized Image Component */}
+              <SwiperSlide key={project.id} className="h-auto pt-5">
+
+
+                <div className="project-card bg-[var(--section-bg)] border border-[var(--card-border)] rounded-2xl overflow-hidden flex flex-col h-full">
+
+
                   <div className="relative aspect-video w-full overflow-hidden bg-zinc-800">
                     {/* <Image 
                        // add project img
@@ -124,9 +126,9 @@ export default function ProjectsPremiumSlider() {
 
                     {/* Tech Stack Tags */}
                     <div className="flex flex-wrap gap-1.5 mb-6">
-                      {project.tags.map((tag, index) => (
-                        <span 
-                          key={index} 
+                      {projectsData && project.tags.map((tag, index) => (
+                        <span
+                          key={index}
                           className="text-[11px] bg-[var(--primary-bg)] text-[var(--primary-text)] px-2.5 py-1 rounded-md border border-[var(--border-color,rgba(0,0,0,0.03))]"
                         >
                           {tag}
@@ -136,17 +138,17 @@ export default function ProjectsPremiumSlider() {
 
                     {/* Action Links */}
                     <div className="flex items-center gap-4 pt-4 border-t border-[var(--border-color,rgba(0,0,0,0.05))] mt-auto">
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-semibold text-[var(--primary-text)] hover:text-[var(--accent)] transition-colors duration-200"
                       >
                         Live Demo
                       </a>
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-[var(--secondary-text)] hover:text-[var(--primary-text)] transition-colors duration-200"
                       >
@@ -159,49 +161,53 @@ export default function ProjectsPremiumSlider() {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <button className="custom-prev w-10 h-10 rounded-full flex items-center justify-center bg-[var(--section-bg)]  border border-[var(--card-border)] text-[var(--primary-text)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200 cursor-pointer select-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button className="custom-next w-10 h-10 rounded-full flex items-center justify-center bg-[var(--section-bg)]  border border-[var(--card-border)] text-[var(--primary-text)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200 cursor-pointer select-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Global CSS Style Customization */}
-        <style jsx global>{`
-          /* Minimal Navigation Arrows (No background, No borders, No jumps) */
-          .swiper-button-next, .swiper-button-prev {
-            color: var(--accent) !important;
-            background: transparent !important;
-            border: none !important;
+        {/*  Customization */}
+
+        <style jsx global >{`
+        
+          .project-slider .project-card {
             box-shadow: none !important;
-            width: auto !important;
-            height: auto !important;
-            transition: transform 0.2s ease;
-          }
-          .swiper-button-next:hover, .swiper-button-prev:hover {
-            background: transparent !important;
-            transform: scale(1.15);
-          }
-          .swiper-button-next::after, .swiper-button-prev::after {
-            font-size: 28px !important;
-            font-weight: bold;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
           }
           
-          /* Full Circle Pagination Dots Fix */
-          .swiper-pagination-bullet {
+          .project-slider .project-card:hover {
+            box-shadow: none !important;
+            border-color: var(--accent) !important;
+            transform: translateY(-6px);
+          }
+
+          .project-slider .custom-prev:active, .custom-next:active {
+            transform: scale(0.95);
+          }
+          
+          .project-slider .swiper-pagination-bullet {
             background: var(--secondary-text) !important;
             opacity: 0.35;
             transition: all 0.3s ease;
           }
-          .swiper-pagination-bullet-active {
+          .project-slider .swiper-pagination-bullet-active {
             background: var(--accent) !important;
             opacity: 1;
-            width: 8px !important;
-            height: 8px !important;
+            width: 10px !important;
+            height: 10px !important;
             border-radius: 50% !important;
           }
 
-          /* Hide arrows on mobile devices */
-          @media (max-w: 640px) {
-            .swiper-button-next, .swiper-button-prev {
-              display: none !important;
-            }
-          }
         `}</style>
 
       </div>
