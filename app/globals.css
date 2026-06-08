@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* smooth scroll and custom scroll bar */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
   /* Light Theme */
   --primary-bg: #ffffff;

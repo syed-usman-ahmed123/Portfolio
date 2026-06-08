@@ -89,7 +89,7 @@ export default function ContactSection() {
                             </svg>
                         </div>
                         <span className="text-sm font-semibold text-[var(--primary-text)] mb-1">
-                            {copied ? "Copied! 📋" : "Direct Email"}
+                            {copied ? "Copied!" : "Direct Email"}
                         </span>
                         <span className="text-xs text-[var(--secondary-text)]">
                             {copied ? "Ready to paste" : "Click to copy"}
