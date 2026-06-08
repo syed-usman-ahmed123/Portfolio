@@ -50,28 +50,28 @@ export default function Skills() {
   const [activeTab, setActiveTab] = useState(skillCategories[0].id);
   const currentCategory = skillCategories.find((cat) => cat.id === activeTab);
 
-  // Custom Function: Mobile par automatic target box par scroll karwayega
+  // Custom Function scroll on mobile
   const handleTabClick = (id) => {
     setActiveTab(id);
-    
-    // Sirf mobile/tablet view checks (agar screen width 1024px se choti hai)
+
+    // only small devices view checks
     if (window.innerWidth < 1024) {
       setTimeout(() => {
         const targetElement = document.getElementById("tech-showcase-box");
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
-      }, 100); // Small timeout to ensure state update doesn't conflict with transition
+      }, 100); //  timeout to ensure state update 
     }
   };
 
   return (
     <section id="skills" className="relative py-20 lg:py-28 bg-[var(--primary-bg)] overflow-hidden">
-      {/* Background High-Tech Glow Effects */}
+      {/* Background  */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[var(--accent)] opacity-[0.03] rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-6xl mx-auto px-6 w-full">
-        
+
         {/* Section Heading */}
         <div className="mb-12 lg:mb-20 text-center lg:text-left">
           <p className="text-xs font-semibold text-[var(--accent)] tracking-[0.25em] uppercase mb-3">
@@ -84,8 +84,8 @@ export default function Skills() {
 
         {/* Dynamic Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          
-          {/* LEFT SIDE: Mobile compact navigation / Desktop Futuristic Controller */}
+
+          {/* left side */}
           <div className="lg:col-span-5 flex flex-col md:flex-row lg:flex-col justify-center gap-3 lg:space-y-4 lg:gap-0">
             {skillCategories.map((category) => {
               const isActive = category.id === activeTab;
@@ -93,30 +93,27 @@ export default function Skills() {
                 <button
                   key={category.id}
                   onClick={() => handleTabClick(category.id)}
-                  className={`w-full text-left p-4 lg:p-6 rounded-xl lg:rounded-2xl transition-all duration-500 relative overflow-hidden flex flex-col group ${
-                    isActive
-                      ? "bg-[var(--section-bg)] border border-[var(--accent)]/40 shadow-lg lg:shadow-xl"
-                      : "bg-[var(--section-bg)]/20 border border-[var(--secondary-text)]/5 lg:bg-transparent lg:border-transparent hover:bg-[var(--section-bg)]/30"
-                  }`}
-                >
-                  {/* Active Indicator Line (Hidden on mobile grid view for cleaner looks) */}
-                  <div
-                    className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--accent)] transition-transform duration-500 hidden lg:block ${
-                      isActive ? "scale-y-100" : "scale-y-0 group-hover:scale-y-50"
+                  className={`w-full text-left p-4 lg:p-6 rounded-xl lg:rounded-2xl transition-all duration-500 relative overflow-hidden flex flex-col group ${isActive
+                    ? "bg-[var(--section-bg)] border border-[var(--accent)]/40 shadow-lg lg:shadow-xl"
+                    : "bg-[var(--section-bg)]/20 border border-[var(--secondary-text)]/5 lg:bg-transparent lg:border-transparent hover:bg-[var(--section-bg)]/30"
                     }`}
+                >
+                  {/* Active Indicator Line */}
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--accent)] transition-transform duration-500 hidden lg:block ${isActive ? "scale-y-100" : "scale-y-0 group-hover:scale-y-50"
+                      }`}
                   />
 
-                  <span className={`text-[10px] lg:text-xs font-mono uppercase tracking-wider mb-0.5 lg:mb-1 transition-colors duration-300 ${
-                    isActive ? "text-[var(--accent)]" : "text-[var(--secondary-text)]/60"
-                  }`}>
+                  <span className={`text-[10px] lg:text-xs font-mono uppercase tracking-wider mb-0.5 lg:mb-1 transition-colors duration-300 ${isActive ? "text-[var(--accent)]" : "text-[var(--secondary-text)]/60"
+                    }`}>
                     {category.badge}
                   </span>
-                  
+
                   <h3 className="font-display font-bold text-base lg:text-2xl text-[var(--primary-text)] mb-1 lg:mb-2">
                     {category.title}
                   </h3>
-                  
-                  {/* Hidden description on mobile to keep things compact */}
+
+                  {/* Hidden description on mobile */}
                   <p className="text-sm text-[var(--secondary-text)] font-light leading-relaxed max-w-sm hidden lg:line-clamp-2">
                     {category.description}
                   </p>
@@ -125,16 +122,16 @@ export default function Skills() {
             })}
           </div>
 
-          {/* RIGHT SIDE: Immersive Interactive Showcase (7 Columns) */}
-          <div 
+          {/* right side */}
+          <div
             id="tech-showcase-box"
             className="lg:col-span-7 bg-[var(--section-bg)]/40 backdrop-blur-xl border border-[var(--secondary-text)]/10 rounded-3xl p-6 md:p-8 lg:p-12 flex flex-col justify-start min-h-[420px] sm:min-h-[360px] lg:h-[540px] relative shadow-2xl overflow-hidden scroll-mt-24"
           >
-            
-            {/* Visual Decorative Grid Lines */}
+
+            {/* Grid Lines */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] rounded-3xl pointer-events-none" />
 
-            {/* Header Section (Always Fixed Top) */}
+            {/* Header Section  */}
             <div className="relative z-10 flex items-center justify-between border-b border-[var(--secondary-text)]/10 pb-4 lg:pb-6 mb-6 lg:mb-8 w-full">
               <div className="font-mono text-[10px] lg:text-xs text-[var(--secondary-text)]/60 uppercase tracking-widest">
                 // Technologies integrated
@@ -146,8 +143,8 @@ export default function Skills() {
             </div>
 
             {/* Skills Grid Wrapper */}
-            <div 
-              key={activeTab} 
+            <div
+              key={activeTab}
               className="relative z-10 w-full flex-1 overflow-y-auto pr-1"
               style={{
                 animation: 'portfolioFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards'
@@ -160,23 +157,29 @@ export default function Skills() {
                 }
               `}</style>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 auto-rows-max">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 auto-rows-max px-1">
                 {currentCategory?.skills.map((skill, sIndex) => (
                   <div
                     key={sIndex}
                     style={{ "--brand-color": skill.color }}
-                    className="flex items-center justify-between p-3.5 lg:p-4 bg-[var(--primary-bg)]/80 border border-[var(--secondary-text)]/5 rounded-xl transition-all duration-300 hover:border-[var(--brand-color)]/30 hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] active:border-[var(--brand-color)]/40 group cursor-default"
+                    className="flex items-center justify-between p-3.5 lg:p-4 mx-0.5 sm:mx-1 bg-[var(--primary-bg)]/80 border border-[var(--secondary-text)]/5 rounded-xl transition-all duration-300 cursor-default group hover:border-[var(--brand-color)]/30 active:border-[var(--brand-color)]/40 
+                    /* Dark Mode (Premium Blur/Glow) */
+                    dark:hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] 
+                    /* Light Mode (Directional Soft Shadow: Bottom & Right Only) */
+                    hover:shadow-[4px_4px_16px_rgba(0,0,0,0.06)] dark:hover:shadow-none
+                    /* Light Mode Active/Pressed State */
+                    active:shadow-[2px_2px_8px_rgba(0,0,0,0.04)]"
                   >
                     <div className="flex items-center gap-3.5">
-                      <div 
+                      <div
                         style={{ backgroundColor: skill.color }}
-                        className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_var(--brand-color)] transition-transform duration-300 group-hover:scale-125 group-active:scale-125" 
+                        className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_var(--brand-color)] transition-transform duration-300 group-hover:scale-125 group-active:scale-125"
                       />
                       <span className="text-sm md:text-base font-medium text-[var(--primary-text)] group-hover:translate-x-1 transition-transform duration-300">
                         {skill.name}
                       </span>
                     </div>
-                    
+
                     <span className="text-[10px] font-mono text-[var(--secondary-text)]/30 uppercase opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
                       Active
                     </span>
@@ -185,7 +188,7 @@ export default function Skills() {
               </div>
             </div>
 
-            {/* Bottom Tech Spec Bar (Always Fixed Bottom) */}
+            {/* Bottom Tech */}
             <div className="relative z-10 border-t border-[var(--secondary-text)]/10 pt-4 lg:pt-6 mt-6 flex items-center justify-between text-[10px] lg:text-xs font-mono text-[var(--secondary-text)]/50 w-full">
               <span>SYSTEM: READY</span>
               <span>STACK_ID: {currentCategory?.id.toUpperCase()}</span>
