@@ -27,7 +27,7 @@ export default function Hero() {
             
             {/* Action Buttons (Using Pure Variables & No Hardcoded Black/White) */}
             <div className="flex flex-wrap gap-4">
-              <Link 
+              <a 
                 href="#projects" 
                 className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-medium px-7 py-3.5 rounded-full btn-hover-slide transition-opacity text-sm"
               >
@@ -35,14 +35,14 @@ export default function Hero() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
-              </Link>
+              </a>
               
-              <Link 
+              <a 
                 href="#contact" 
                 className="inline-flex items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-7 py-3.5 rounded-full hover:bg-[var(--primary-text)] hover:text-[var(--primary-bg)] transition-colors text-sm"
               >
                 Get in touch
-              </Link>
+              </a>
             </div>
           </div>
 
