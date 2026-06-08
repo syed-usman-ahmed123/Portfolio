@@ -1,5 +1,8 @@
+"use client"; // 💡 Next.js App Router me framer motion ke liye yeh lazmi hai
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -8,27 +11,44 @@ export default function Hero() {
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-[var(--accent)] opacity-10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-[var(--secondary-text)] opacity-10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8 w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Content Side */}
           <div>
-            <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--primary-text)] mb-6">
+            {/* 1. Main Heading (Fixed & Single Tag) */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+              className="font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--primary-text)] mb-6"
+            >
               Hi, I'm <span className="text-[var(--accent)]">Syed Usman Ahmed</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-[var(--secondary-text)] font-light leading-relaxed max-w-md mb-10">
+            </motion.h1>
+
+            {/* 2. Description Paragraph (Heading ke thoda baad smoothly fade-in hoga) */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+              className="text-lg md:text-xl text-[var(--secondary-text)] font-light leading-relaxed max-w-md mb-10"
+            >
               Freelance{' '}
               <strong className="font-medium text-[var(--primary-text)]">
                 UI/UX Designer &amp; Frontend Developer
               </strong>
               . I design and build digital products that people love to use — fast, clean, and accessible.
-            </p>
-            
-            {/* Action Buttons (Using Pure Variables & No Hardcoded Black/White) */}
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="#projects" 
+            </motion.p>
+
+            {/* 3. Action Buttons (Paragraph ke baad pop-up honge) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
+              className="flex flex-wrap gap-4"
+            >
+              <a
+                href="#projects"
                 className="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-medium px-7 py-3.5 rounded-full btn-hover-slide transition-opacity text-sm"
               >
                 View my work
@@ -36,19 +56,24 @@ export default function Hero() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              
-              <a 
-                href="#contact" 
+
+              <a
+                href="#contact"
                 className="inline-flex items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-7 py-3.5 rounded-full hover:bg-[var(--primary-text)] hover:text-[var(--primary-bg)] transition-colors text-sm"
               >
                 Get in touch
               </a>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Image Side (Bilkul Clean - Kisi Kism Ka Koi Extra Border Ya Shadow Nahi) */}
+          {/* Right Image Side (Smoothly side se fade-in hogi) */}
           <div className="flex justify-center md:justify-end">
-            <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
+              className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96"
+            >
               <div className="w-full h-full rounded-3xl overflow-hidden relative">
                 {/* Jab Image lagani ho toh bas comment hata dena */}
                 {/* <Image
@@ -59,7 +84,7 @@ export default function Hero() {
                   className="object-cover"
                 /> */}
               </div>
-            </div>
+            </motion.div>
           </div>
 
         </div>

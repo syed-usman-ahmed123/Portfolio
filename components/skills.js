@@ -70,7 +70,7 @@ export default function Skills() {
       {/* Background  */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[var(--accent)] opacity-[0.03] rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
 
-      <div className="max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Section Heading */}
         <div className="mb-12 lg:mb-20 text-center lg:text-left">

@@ -19,7 +19,7 @@ export default function Experience() {
       {/* Background soft glow */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[var(--accent)] opacity-[0.03] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-      <div className="max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* main div divide into two columns*/}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
