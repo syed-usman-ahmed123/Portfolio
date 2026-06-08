@@ -24,7 +24,32 @@ export default function Navbar() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // 2. Active section track
+    const sections = ["hero", "experience", "skills", "projects", "contact"];
+    const observers = [];
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setActiveSection(id);
+            }
+          },
+          { rootMargin: "-30% 0px -60% 0px" } 
+        );
+        observer.observe(element);
+        observers.push({ observer, element });
+      }
+    });
+
+
+   return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observers.forEach(({ observer, element }) => observer.unobserve(element));
+    };
   }, []);
 
   if (!mounted) return null;
