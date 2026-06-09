@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion"; // 💡 Sirf motion ko import kiya
 
 export default function Skills() {
   const skillCategories = [
@@ -72,21 +73,33 @@ export default function Skills() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        {/* Section Heading */}
-        <div className="mb-12 lg:mb-20 text-center lg:text-left">
+        {/* Section Heading (Big Element 1: Slide left entry) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="mb-12 lg:mb-20 text-center lg:text-left"
+        >
           <p className="text-xs font-semibold text-[var(--accent)] tracking-[0.25em] uppercase mb-3">
             Expertise Matrix
           </p>
           <h2 className="font-display font-bold text-4xl md:text-6xl tracking-tight text-[var(--primary-text)]">
             Capabilities <span className="text-[var(--secondary-text)]/40 font-light">&amp; stack.</span>
           </h2>
-        </div>
+        </motion.div>
 
         {/* Dynamic Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
-          {/* left side */}
-          <div className="lg:col-span-5 flex flex-col md:flex-row lg:flex-col justify-center gap-3 lg:space-y-4 lg:gap-0">
+          {/* left side (Big Element 2: Pure Fade Up Entry for Left Container) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+            className="lg:col-span-5 flex flex-col md:flex-row lg:flex-col justify-center gap-3 lg:space-y-4 lg:gap-0"
+          >
             {skillCategories.map((category) => {
               const isActive = category.id === activeTab;
               return (
@@ -120,11 +133,15 @@ export default function Skills() {
                 </button>
               );
             })}
-          </div>
+          </motion.div>
 
-          {/* right side */}
-          <div
+          {/* right side Box (Big Element 3: Fade Up for Complete Showcase Box) */}
+          <motion.div
             id="tech-showcase-box"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
             className="lg:col-span-7 bg-[var(--section-bg)]/40 backdrop-blur-xl border border-[var(--secondary-text)]/10 rounded-3xl p-6 md:p-8 lg:p-12 flex flex-col justify-start min-h-[420px] sm:min-h-[360px] lg:h-[540px] relative shadow-2xl overflow-hidden scroll-mt-24"
           >
 
@@ -142,7 +159,7 @@ export default function Skills() {
               </div>
             </div>
 
-            {/* Skills Grid Wrapper */}
+            {/* Skills Grid Wrapper (Kept Exactly 100% Original With Raw CSS Keyframe) */}
             <div
               key={activeTab}
               className="relative z-10 w-full flex-1 overflow-y-auto pr-1"
@@ -194,7 +211,7 @@ export default function Skills() {
               <span>STACK_ID: {currentCategory?.id.toUpperCase()}</span>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 

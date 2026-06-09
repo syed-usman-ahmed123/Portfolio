@@ -6,6 +6,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 export default function ProjectsPremiumSlider() {
   const projectsData = [
@@ -55,18 +56,30 @@ export default function ProjectsPremiumSlider() {
     <section className="py-24 bg-[var(--section-bg)] transition-colors duration-300" id="projects">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        {/* Section Header (Big Element 1: Slide left/up combination entries) */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="text-center mb-16"
+        >
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] mb-2">
             My Portfolio
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-text)] tracking-tight">
             Recent Work & <span className="text-[var(--accent)]">Projects</span>
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Swiper Slider Container */}
-        <div className="w-full relative project-slider">
+        {/* Swiper Slider Container (Big Element 2: Upward smooth reveal for the entire block) */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+          className="w-full relative project-slider"
+        >
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
@@ -174,11 +187,12 @@ export default function ProjectsPremiumSlider() {
               </svg>
             </button>
           </div>
-        </div>
+      </motion.div>
 
-        {/*  Customization */}
 
-        <style jsx global >{`
+      {/*  Customization */}
+
+      <style jsx global >{`
         
           .project-slider .project-card {
             box-shadow: none !important;
@@ -210,7 +224,7 @@ export default function ProjectsPremiumSlider() {
 
         `}</style>
 
-      </div>
-    </section>
+    </div>
+    </section >
   );
 }

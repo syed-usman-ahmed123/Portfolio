@@ -75,14 +75,14 @@ export default function Hero() {
               className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96"
             >
               <div className="w-full h-full rounded-3xl overflow-hidden relative">
-                {/* Jab Image lagani ho toh bas comment hata dena */}
-                {/* <Image
-                  src="/your-image-path.jpg"
+             
+                <Image
+                  src="/usman.jpg"
                   alt="Syed Usman Ahmed"
                   fill
                   priority
                   className="object-cover"
-                /> */}
+                /> 
               </div>
             </motion.div>
           </div>

@@ -1,3 +1,7 @@
+"use client"; 
+
+import { motion } from "framer-motion";
+
 export default function Experience() {
   const experiences = [
     {
@@ -24,21 +28,35 @@ export default function Experience() {
         {/* main div divide into two columns*/}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
           
-          {/* Column 1: Left Side */}
-          <div className="lg:sticky lg:top-28">
+          {/* Left Side  */}
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+            className="lg:sticky lg:top-28"
+          >
             <p className="text-sm font-medium text-[var(--accent)] tracking-widest uppercase mb-3">
               My Journey
             </p>
             <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-[var(--primary-text)] leading-tight">
               Professional Experience
             </h2>
-          </div>
+          </motion.div>
 
-          {/* Column 2: Right Side  */}
+          {/* Column 2: Right Side */}
           <div className="lg:col-span-2 relative border-l-2 border-[var(--secondary-text)]/10 pl-6 md:pl-10 space-y-8 ml-1 md:ml-3">
             
             {experiences.map((exp, index) => (
-              <div key={index} className="relative group">
+             
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
+                className="relative group"
+              >
                 
                 {/* Timeline Dot*/}
                 <div className="absolute -left-[31px] md:-left-[47px] top-[30px] w-3 h-3 rounded-full bg-[var(--primary-bg)] border-2 border-[var(--accent)] group-hover:bg-[var(--accent)] transition-all duration-300 z-10" />
@@ -69,7 +87,7 @@ export default function Experience() {
                   </p>
                 </div>
 
-              </div>
+              </motion.div>
             ))}
 
           </div>

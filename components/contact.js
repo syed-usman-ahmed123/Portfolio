@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
     const [copied, setCopied] = useState(false);
@@ -15,20 +16,33 @@ export default function ContactSection() {
         <section className="py-24 bg-[var(--primary-bg)] transition-colors duration-300" id="contact">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
 
-                {/* Section Header */}
-                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] mb-3">
-                    What's Next?
-                </p>
-                <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-text)] tracking-tight mb-6">
-                    Let's Connect
-                </h2>
+                {/* Section Header (Big Element 1: Smooth tracking reveal) */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+                >
+                    <p className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] mb-3">
+                        What's Next?
+                    </p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-text)] tracking-tight mb-6">
+                        Let's Connect
+                    </h2>
 
-                <p className="text-base text-[var(--secondary-text)] max-w-xl mx-auto mb-12 leading-relaxed">
-                    Main actively **Junior Frontend Developer** opportunities dhoond raha hoon. Agar aap koi dev dhoond rahe hain, ya sirf mere code par baat karna chahte hain, toh neeche diye gaye tareeqon se direct rabta karein!
-                </p>
+                    <p className="text-base text-[var(--secondary-text)] max-w-xl mx-auto mb-12 leading-relaxed">
+                        Main actively **Junior Frontend Developer** opportunities dhoond raha hoon. Agar aap koi dev dhoond rahe hain, ya sirf mere code par baat karna chahte hain, toh neeche diye gaye tareeqon se direct rabta karein!
+                    </p>
+                </motion.div>
 
-                {/* Recruiter & Client Focused 5-Card Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 w-full mx-auto">
+                {/* Recruiter & Client Focused 5-Card Grid (Big Element 2: Entire container entry) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 w-full mx-auto"
+                >
 
                     {/* 1. LinkedIn Card */}
                     <a
@@ -111,9 +125,9 @@ export default function ContactSection() {
                         <span className="text-xs text-[var(--secondary-text)]">PDF (1 Page)</span>
                     </a>
 
-                </div>
+                </motion.div>
 
             </div>
-        </section>
+        </section >
     );
 }
