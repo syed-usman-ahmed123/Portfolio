@@ -125,7 +125,7 @@ export default function Navbar() {
               onClick={() => setActiveSection("contact")}
               className="hidden md:inline-flex items-center gap-2 bg-[var(--accent)] text-white text-sm font-semibold px-5 py-2 rounded-full btn-hover-slide transition-colors duration-300"
             >
-              <span className="relative z-10">Hire me</span>
+              <span className="relative z-10">Let's Talk</span>
               <svg className="w-3.5 h-3.5 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -205,7 +205,7 @@ export default function Navbar() {
                 }}
                 className="w-full relative overflow-hidden text-white justify-center inline-flex items-center gap-2 bg-[var(--accent)] font-semibold text-sm px-5 py-2.5 rounded-full text-center btn-hover-slide transition-colors duration-300"
               >
-                <span className="relative z-10">Hire me</span>
+                <span className="relative z-10">Let's Talk</span>
                 <svg className="w-3.5 h-3.5 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

@@ -13,7 +13,7 @@ export default function Footer() {
           
           {/* Left Side */}
           <div className="text-sm text-[var(--secondary-text)]">
-            <p>© {new Date().getFullYear()} <span className="font-semibold text-[var(--primary-text)]">Usman.dev</span>. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} <span className="font-semibold text-[var(--primary-text)]">Syed Usman Ahmed</span>. All rights reserved.</p>
           </div>
 
           {/* Middle Side */}

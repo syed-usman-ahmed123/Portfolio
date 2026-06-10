@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
     const [copied, setCopied] = useState(false);
-    const emailAddress = "usman.dev@example.com"; // ⚠️ Yahan apni Gmail dalein
+    const emailAddress = "usmanahmed.professional@gmail.com";
 
     const handleCopy = () => {
         navigator.clipboard.writeText(emailAddress);
@@ -26,12 +26,15 @@ export default function ContactSection() {
                     <p className="text-xs font-semibold uppercase tracking-widest text-[var(--accent)] mb-3">
                         What's Next?
                     </p>
+
                     <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-text)] tracking-tight mb-6">
-                        Let's Connect
+                        Let's <span className="text-[var(--accent)]">Connect</span>
                     </h2>
 
                     <p className="text-base text-[var(--secondary-text)] max-w-xl mx-auto mb-12 leading-relaxed">
-                        Main actively **Junior Frontend Developer** opportunities dhoond raha hoon. Agar aap koi dev dhoond rahe hain, ya sirf mere code par baat karna chahte hain, toh neeche diye gaye tareeqon se direct rabta karein!
+                        Whether you have an interesting project idea, want to check out my open-source code,
+                        or simply wish to review my technical credentials feel free to explore the resources
+                        and touchpoints below.
                     </p>
                 </motion.div>
 
@@ -46,7 +49,7 @@ export default function ContactSection() {
 
                     {/* 1. LinkedIn Card */}
                     <a
-                        href="https://linkedin.com/in/yourusername" // ⚠️ Apna LinkedIn link lagaein
+                        href="https://www.linkedin.com/in/syed-usman-ahmed-9bb3b8397/" // 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center p-6 bg-[var(--section-bg)] border border-[var(--card-border,rgba(0,0,0,0.06))] dark:border-[var(--card-border,rgba(255,255,255,0.08))] rounded-2xl hover:border-[var(--accent)] transition-all duration-300 group"
@@ -62,7 +65,7 @@ export default function ContactSection() {
 
                     {/* 2. WhatsApp Card */}
                     <a
-                        href="https://wa.me/923001234567?text=Hi%20Usman,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20an%20opportunity." // ⚠️ Apna no dalein (Country code ke sath bina zero ke)
+                        href="https://wa.me/923132548639" 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center p-6 bg-[var(--section-bg)] border border-[var(--card-border,rgba(0,0,0,0.06))] dark:border-[var(--card-border,rgba(255,255,255,0.08))] rounded-2xl hover:border-green-500 transition-all duration-300 group"
@@ -78,7 +81,7 @@ export default function ContactSection() {
 
                     {/* 3. GitHub Card */}
                     <a
-                        href="https://github.com/yourusername" // ⚠️ Apna GitHub link lagaein
+                        href="https://github.com/syed-usman-ahmed123" 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center p-6 bg-[var(--section-bg)] border border-[var(--card-border,rgba(0,0,0,0.06))] dark:border-[var(--card-border,rgba(255,255,255,0.08))] rounded-2xl hover:border-purple-500 transition-all duration-300 group"

@@ -12,43 +12,43 @@ export default function ProjectsPremiumSlider() {
   const projectsData = [
     {
       id: 1,
-      title: "E-Commerce Cloud Platform",
-      category: "Web Apps",
-      description: "A high-performance e-commerce engine with real-time inventory tracking, multi-currency support, and instant stripe checkouts.",
-      tags: ["Next.js", "JavaScript", "Tailwind", "Stripe"],
-      liveUrl: "https://demo.example.com",
-      githubUrl: "https://github.com",
-      // add project img
+      title: "Twitter / X UI Clone",
+      category: "UI Clone",
+      description: "A pixel-perfect frontend replica of Twitter/X built to demonstrate complex responsive layouts, advanced sidebar navigation, and flawless mobile responsiveness.",
+      tags: ["HTML", "Tailwind CSS"],
+      liveUrl: "https://usmancodertwitterclone.netlify.app/",
+      githubUrl: "https://github.com/syed-usman-ahmed123/Twitter-UI-Clone",
+      image: "/twitter.png"
     },
     {
       id: 2,
-      title: "Crypto Wallet Dashboard",
-      category: "Web Apps",
-      description: "Web3 financial dashboard visualizing real-time crypto charts, gas-fee optimization analytics, and multi-wallet connectivity.",
-      tags: ["React", "Chart.js", "Web3", "Tailwind"],
-      liveUrl: "https://demo.example.com",
-      githubUrl: "https://github.com",
-      // add project img
+      title: "Driven For Growth Clone",
+      category: "Website",
+      description: "A professional corporate website rebuilt using WordPress and Elementor, featuring clean layouts, optimized media structures, and complete cross-browser compatibility.",
+      tags: ["WordPress", "Elementor"],
+      liveUrl: "https://usmancoderdrivenclone.free.nf/",
+      // githubUrl nahi hai yahan, toh button automatic nahi dikhega
+      image: "/driven.png"
     },
     {
       id: 3,
-      title: "Fitness Tracker App",
-      category: "Mobile App",
-      description: "Cross-platform mobile application tracking daily micro-nutrients, workout routines, and biometric sync via smartwatches.",
-      tags: ["React Native", "Expo", "Redux Toolkit"],
-      liveUrl: "https://demo.example.com",
-      githubUrl: "https://github.com",
-      // add project img
+      title: "Functional Todo List App",
+      category: "Web App",
+      description: "A fully operational state-driven task management application. Features include real-time task CRUD operations and persistent data storage utilizing browser LocalStorage.",
+      tags: ["React.js", "Tailwind CSS"],
+      liveUrl: "https://usmancodertodolistapp.netlify.app/",
+      githubUrl: "https://github.com/syed-usman-ahmed123/TodoList-App",
+      image: "/todolist.png"
     },
     {
       id: 4,
-      title: "AI SaaS Landing Page",
-      category: "UI/UX Design",
-      description: "A premium, conversion-optimized marketing interface with dark aesthetics, magnetic buttons, and glassmorphism layouts.",
-      tags: ["Figma", "Framer Motion", "Tailwind"],
-      liveUrl: "https://demo.example.com",
-      githubUrl: "https://github.com",
-      // add project img
+      title: "Full-Stack URL Shortener",
+      category: "Web App",
+      description: "A secure full-stack link optimization tool built with database architecture. Supports instant custom slug generation, routing redirection, and backend data mutation.",
+      tags: ["Next.js", "MongoDB", "Tailwind CSS"],
+      // liveUrl nahi hai yahan, toh button automatic nahi dikhega
+      githubUrl: "https://github.com/syed-usman-ahmed123/URL-Shortner-Project-in-NextJS",
+      image: "/urlshort.png"
     }
   ];
 
@@ -56,7 +56,7 @@ export default function ProjectsPremiumSlider() {
     <section className="py-24 bg-[var(--section-bg)] transition-colors duration-300" id="projects">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        {/* Section Header (Big Element 1: Slide left/up combination entries) */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,11 +68,11 @@ export default function ProjectsPremiumSlider() {
             My Portfolio
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-text)] tracking-tight">
-            Recent Work & <span className="text-[var(--accent)]">Projects</span>
+            Recent Work <span className="text-[var(--accent)]"> &  Projects</span>
           </h2>
         </motion.div>
 
-        {/* Swiper Slider Container (Big Element 2: Upward smooth reveal for the entire block) */}
+        {/* Swiper Slider Container */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,6 @@ export default function ProjectsPremiumSlider() {
               clickable: true,
               dynamicBullets: true
             }}
-
             navigation={{
               nextEl: '.custom-next',
               prevEl: '.custom-prev',
@@ -109,18 +108,16 @@ export default function ProjectsPremiumSlider() {
             {projectsData.map((project) => (
               <SwiperSlide key={project.id} className="h-auto pt-5">
 
-
                 <div className="project-card bg-[var(--section-bg)] border border-[var(--card-border)] rounded-2xl overflow-hidden flex flex-col h-full">
 
-
                   <div className="relative aspect-video w-full overflow-hidden bg-zinc-800">
-                    {/* <Image 
-                       // add project img
+                    <Image 
+                      src={project.image}
                       alt={project.title}
                       fill
                       sizes="(max-w-768px) 100vw, 50vw"
                       className="object-cover transition-transform duration-500 hover:scale-105"
-                    /> */}
+                    />
                   </div>
 
                   {/* Content Area */}
@@ -139,7 +136,7 @@ export default function ProjectsPremiumSlider() {
 
                     {/* Tech Stack Tags */}
                     <div className="flex flex-wrap gap-1.5 mb-6">
-                      {projectsData && project.tags.map((tag, index) => (
+                      {project.tags.map((tag, index) => (
                         <span
                           key={index}
                           className="text-[11px] bg-[var(--primary-bg)] text-[var(--primary-text)] px-2.5 py-1 rounded-md border border-[var(--border-color,rgba(0,0,0,0.03))]"
@@ -149,25 +146,31 @@ export default function ProjectsPremiumSlider() {
                       ))}
                     </div>
 
-                    {/* Action Links */}
-                    <div className="flex items-center gap-4 pt-4 border-t border-[var(--border-color,rgba(0,0,0,0.05))] mt-auto">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-semibold text-[var(--primary-text)] hover:text-[var(--accent)] transition-colors duration-200"
-                      >
-                        Live Demo
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium text-[var(--secondary-text)] hover:text-[var(--primary-text)] transition-colors duration-200"
-                      >
-                        Source Code
-                      </a>
-                    </div>
+                    {/* Action Links (Fixed with Conditional Rendering) */}
+                    {(project.liveUrl || project.githubUrl) && (
+                      <div className="flex items-center gap-4 pt-4 border-t border-[var(--border-color,rgba(0,0,0,0.05))] mt-auto">
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-semibold text-[var(--primary-text)] hover:text-[var(--accent)] transition-colors duration-200"
+                          >
+                            Live Demo
+                          </a>
+                        )}
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-[var(--secondary-text)] hover:text-[var(--primary-text)] transition-colors duration-200"
+                          >
+                            Source Code
+                          </a>
+                        )}
+                      </div>
+                    )}
 
                   </div>
                 </div>
@@ -175,25 +178,23 @@ export default function ProjectsPremiumSlider() {
             ))}
           </Swiper>
 
+          {/* Navigation Buttons */}
           <div className="flex items-center justify-center gap-2 mt-4">
-            <button className="custom-prev w-10 h-10 rounded-full flex items-center justify-center bg-[var(--section-bg)]  border border-[var(--card-border)] text-[var(--primary-text)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200 cursor-pointer select-none">
+            <button className="custom-prev w-10 h-10 rounded-full flex items-center justify-center bg-[var(--section-bg)] border border-[var(--card-border)] text-[var(--primary-text)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200 cursor-pointer select-none">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
             </button>
-            <button className="custom-next w-10 h-10 rounded-full flex items-center justify-center bg-[var(--section-bg)]  border border-[var(--card-border)] text-[var(--primary-text)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200 cursor-pointer select-none">
+            <button className="custom-next w-10 h-10 rounded-full flex items-center justify-center bg-[var(--section-bg)] border border-[var(--card-border)] text-[var(--primary-text)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200 cursor-pointer select-none">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </button>
           </div>
-      </motion.div>
+        </motion.div>
 
-
-      {/*  Customization */}
-
-      <style jsx global >{`
-        
+        {/* Customization Global CSS */}
+        <style jsx global>{`
           .project-slider .project-card {
             box-shadow: none !important;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
@@ -221,10 +222,9 @@ export default function ProjectsPremiumSlider() {
             height: 10px !important;
             border-radius: 50% !important;
           }
-
         `}</style>
 
-    </div>
-    </section >
+      </div>
+    </section>
   );
 }

@@ -1,7 +1,5 @@
-"use client"; // 💡 Next.js App Router me framer motion ke liye yeh lazmi hai
-
+"use client"; 
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -27,21 +25,20 @@ export default function Hero() {
             </motion.h1>
 
             {/* 2. Description Paragraph (Heading ke thoda baad smoothly fade-in hoga) */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
               className="text-lg md:text-xl text-[var(--secondary-text)] font-light leading-relaxed max-w-md mb-10"
             >
-              Freelance{' '}
+              Web Developer{' '}
               <strong className="font-medium text-[var(--primary-text)]">
-                UI/UX Designer &amp; Frontend Developer
-              </strong>
-              . I design and build digital products that people love to use — fast, clean, and accessible.
+                focused on Frontend
+              </strong> I build clean, fast, and fully responsive websites using modern code (Next.js, Tailwind CSS) and CMS platforms like WordPress (Elementor) and Shopify.
             </motion.p>
 
             {/* 3. Action Buttons (Paragraph ke baad pop-up honge) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
@@ -58,31 +55,33 @@ export default function Hero() {
               </a>
 
               <a
-                href="#contact"
+                href="/my-resume.pdf"
+                target="_blank" 
+                rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-7 py-3.5 rounded-full hover:bg-[var(--primary-text)] hover:text-[var(--primary-bg)] transition-colors text-sm"
               >
-                Get in touch
+                Download CV
               </a>
             </motion.div>
           </div>
 
           {/* Right Image Side (Smoothly side se fade-in hogi) */}
           <div className="flex justify-center md:justify-end">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
               className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96"
             >
               <div className="w-full h-full rounded-3xl overflow-hidden relative">
-             
+
                 <Image
                   src="/usman.jpg"
                   alt="Syed Usman Ahmed"
                   fill
                   priority
                   className="object-cover"
-                /> 
+                />
               </div>
             </motion.div>
           </div>

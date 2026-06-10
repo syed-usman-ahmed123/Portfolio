@@ -1,49 +1,43 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion"; // 💡 Sirf motion ko import kiya
+import { motion } from "framer-motion"; 
 
 export default function Skills() {
   const skillCategories = [
     {
-      id: "mern",
-      title: "Full Stack MERN",
-      badge: "App Ecosystem",
-      description: "JavaScript ecosystem for building scalable web applications.",
+      id: "frontend",
+      title: "Frontend Development",
+      badge: "UI & UX Execution",
+      description: "Crafting fast, pixel-perfect, and fully responsive user interfaces using modern frameworks and libraries.",
       skills: [
+        { name: "HTML5 & CSS3", color: "#e34f26" },
+        { name: "JavaScript", color: "#f7df1e" },
+        { name: "Bootstrap", color: "#7952b3" },
+        { name: "Tailwind CSS", color: "#38bdf8" },
         { name: "React.js", color: "#61dafb" },
-        { name: "Next.js", color: "#ffffff" },
+        { name: "Next.js", color: "#00f0ff" },
+      ],
+    },
+    {
+      id: "backend",
+      title: "Backend & Database",
+      badge: "Server & APIs",
+      description: "Developing robust backend logic, managing secure databases, and building scalable server-side structures.",
+      skills: [
         { name: "Node.js", color: "#6cc24a" },
         { name: "Express.js", color: "#828282" },
         { name: "MongoDB", color: "#47a248" },
-        { name: "Tailwind CSS", color: "#38bdf8" },
       ],
     },
     {
       id: "cms",
       title: "CMS & E-Commerce",
-      badge: "Platforms",
-      description: "Custom platform development and performance tuning.",
+      badge: "Platforms & No-Code",
+      description: "Setting up powerful, high-converting digital stores and business websites that are easy to manage.",
       skills: [
         { name: "WordPress", color: "#21759b" },
+        { name: "Elementor", color: "#92003B" },
         { name: "Shopify", color: "#96bf48" },
-        { name: "Liquid", color: "#b042ff" },
-        { name: "WooCommerce", color: "#96588a" },
-        { name: "Speed Tuning", color: "#ff9f43" },
-        { name: "Custom Themes", color: "#10ac84" },
-      ],
-    },
-    {
-      id: "tools",
-      title: "Backend & Dev Tools",
-      badge: "Architecture",
-      description: "Architecture, state management, and deployment pipelines.",
-      skills: [
-        { name: "RESTful APIs", color: "#0abde3" },
-        { name: "Redux Toolkit", color: "#764abc" },
-        { name: "Git & GitHub", color: "#f05032" },
-        { name: "JWT Auth", color: "#00ffff" },
-        { name: "Postman", color: "#ff6c37" },
-        { name: "Vercel / Hosting", color: "#ee5253" },
       ],
     },
   ];
@@ -74,7 +68,7 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Section Heading (Big Element 1: Slide left entry) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -82,10 +76,10 @@ export default function Skills() {
           className="mb-12 lg:mb-20 text-center lg:text-left"
         >
           <p className="text-xs font-semibold text-[var(--accent)] tracking-[0.25em] uppercase mb-3">
-            Expertise Matrix
+            CORE TECHNOLOGIES
           </p>
           <h2 className="font-display font-bold text-4xl md:text-6xl tracking-tight text-[var(--primary-text)]">
-            Capabilities <span className="text-[var(--secondary-text)]/40 font-light">&amp; stack.</span>
+            Tech stack<span className="text-[var(--accent)]"> & tools</span>
           </h2>
         </motion.div>
 
@@ -93,7 +87,7 @@ export default function Skills() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
           {/* left side (Big Element 2: Pure Fade Up Entry for Left Container) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -142,7 +136,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-            className="lg:col-span-7 bg-[var(--section-bg)]/40 backdrop-blur-xl border border-[var(--secondary-text)]/10 rounded-3xl p-6 md:p-8 lg:p-12 flex flex-col justify-start min-h-[420px] sm:min-h-[360px] lg:h-[540px] relative shadow-2xl overflow-hidden scroll-mt-24"
+            className="lg:col-span-7 bg-[var(--section-bg)]/40 backdrop-blur-xl border border-[var(--secondary-text)]/10 rounded-3xl p-6 md:p-8 lg:p-12 flex flex-col justify-start min-h-[420px] sm:min-h-[360px] lg:h-[500px] relative shadow-2xl overflow-hidden scroll-mt-24"
           >
 
             {/* Grid Lines */}
@@ -179,13 +173,15 @@ export default function Skills() {
                   <div
                     key={sIndex}
                     style={{ "--brand-color": skill.color }}
-                    className="flex items-center justify-between p-3.5 lg:p-4 mx-0.5 sm:mx-1 bg-[var(--primary-bg)]/80 border border-[var(--secondary-text)]/5 rounded-xl transition-all duration-300 cursor-default group hover:border-[var(--brand-color)]/30 active:border-[var(--brand-color)]/40 
-                    /* Dark Mode (Premium Blur/Glow) */
+                    className="flex items-center justify-between p-3.5 lg:p-4 mx-0.5 sm:mx-1 bg-[var(--primary-bg)]/80 rounded-xl transition-all duration-300 cursor-default group 
+
+                    border border-[var(--brand-color)]/25
+ 
+                    lg:border-[var(--secondary-text)]/5 lg:hover:border-[var(--brand-color)]/70
+ 
                     dark:hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] 
-                    /* Light Mode (Directional Soft Shadow: Bottom & Right Only) */
-                    hover:shadow-[4px_4px_16px_rgba(0,0,0,0.06)] dark:hover:shadow-none
-                    /* Light Mode Active/Pressed State */
-                    active:shadow-[2px_2px_8px_rgba(0,0,0,0.04)]"
+ 
+                    hover:shadow-[4px_4px_16px_rgba(0,0,0,0.06)] dark:hover:shadow-none"
                   >
                     <div className="flex items-center gap-3.5">
                       <div
