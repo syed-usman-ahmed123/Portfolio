@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import Image from 'next/image';
 import { motion } from "framer-motion";
 
@@ -56,9 +56,9 @@ export default function Hero() {
 
               <a
                 href="/my-resume.pdf"
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-7 py-3.5 rounded-full hover:bg-[var(--primary-text)] hover:text-[var(--primary-bg)] transition-colors text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-7 py-3.5 rounded-full btn-whatsapp-hover text-sm"
               >
                 Download CV
               </a>

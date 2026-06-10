@@ -1,5 +1,5 @@
 "use client";
-
+import ScrollAnimate from "./scroll-animate";
 import { motion } from "framer-motion";
 
 export default function Experience() {
@@ -36,9 +36,11 @@ export default function Experience() {
             transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
             className="lg:sticky lg:top-28"
           >
+            <ScrollAnimate>
             <p className="text-sm font-medium text-[var(--accent)] tracking-widest uppercase mb-3">
               My Journey
             </p>
+            </ScrollAnimate>
             <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-[var(--primary-text)] leading-tight">
               Professional <span className="text-[var(--accent)]">Experience</span>
             </h2>

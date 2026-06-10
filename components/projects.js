@@ -100,7 +100,7 @@ export default function ProjectsPremiumSlider() {
               prevEl: '.custom-prev',
             }}
             breakpoints={{
-              640: { slidesPerView: 2, spaceBetween: 24 },
+              761: { slidesPerView: 2, spaceBetween: 24 },
               1024: { slidesPerView: 2, spaceBetween: 30 }
             }}
             className="mySwiper !pb-16"
@@ -111,7 +111,7 @@ export default function ProjectsPremiumSlider() {
                 <div className="project-card bg-[var(--section-bg)] border border-[var(--card-border)] rounded-2xl overflow-hidden flex flex-col h-full">
 
                   <div className="relative aspect-video w-full overflow-hidden bg-zinc-800">
-                    <Image 
+                    <Image
                       src={project.image}
                       alt={project.title}
                       fill
@@ -148,15 +148,19 @@ export default function ProjectsPremiumSlider() {
 
                     {/* Action Links (Fixed with Conditional Rendering) */}
                     {(project.liveUrl || project.githubUrl) && (
-                      <div className="flex items-center gap-4 pt-4 border-t border-[var(--border-color,rgba(0,0,0,0.05))] mt-auto">
+                      <div className="md:flex  items-center gap-4 pt-4 border-t border-[var(--border-color,rgba(0,0,0,0.05))] mt-auto">
                         {project.liveUrl && (
                           <a
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-semibold text-[var(--primary-text)] hover:text-[var(--accent)] transition-colors duration-200"
+                            className=" inline-flex me-4 md:me-0  items-center gap-2 bg-[var(--accent)] text-white text-sm font-medium px-5 py-2 rounded-full btn-hover-slide transition-colors duration-300"
                           >
-                            Live Demo
+                            <span className="relative z-10">Live Demo</span>
+                            <svg className="w-3.5 h-3.5 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                           
                           </a>
                         )}
                         {project.githubUrl && (
@@ -164,9 +168,12 @@ export default function ProjectsPremiumSlider() {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-medium text-[var(--secondary-text)] hover:text-[var(--primary-text)] transition-colors duration-200"
+                            className="inline-flex mt-2 md:mt-0 items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-5 py-2 rounded-full btn-whatsapp-hover text-sm"
                           >
-                            Source Code
+                          <span className="relative z-10">Source Code</span>
+                            <svg className="w-3.5 h-3.5 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                           </a>
                         )}
                       </div>
@@ -203,7 +210,7 @@ export default function ProjectsPremiumSlider() {
           .project-slider .project-card:hover {
             box-shadow: none !important;
             border-color: var(--accent) !important;
-            transform: translateY(-6px);
+           
           }
 
           .project-slider .custom-prev:active, .custom-next:active {
