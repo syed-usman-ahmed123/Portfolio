@@ -73,14 +73,14 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
               className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96"
             >
-              <div className="w-full h-full rounded-3xl overflow-hidden relative">
+              <div className="w-full h-full rounded-3xl overflow-hidden relative ">
 
                 <Image
-                  src="/usman.png"
+                  src="/usman1.png"
                   alt="Syed Usman Ahmed"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover "
                 />
               </div>
             </motion.div>
