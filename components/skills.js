@@ -1,6 +1,6 @@
-"use client";
+"use client"
 import { useState } from "react";
-import { motion } from "framer-motion"; 
+import ScrollAnimate from "./scroll-animate";
 
 export default function Skills() {
   const skillCategories = [
@@ -67,113 +67,101 @@ export default function Skills() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        {/* Section Heading (Big Element 1: Slide left entry) */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-          className="mb-12 lg:mb-20 text-center lg:text-left"
-        >
-          <p className="text-xs font-semibold text-[var(--accent)] tracking-[0.25em] uppercase mb-3">
-            CORE TECHNOLOGIES
-          </p>
-          <h2 className="font-display font-bold text-4xl md:text-6xl tracking-tight text-[var(--primary-text)]">
-            Tech stack<span className="text-[var(--accent)]"> & tools</span>
-          </h2>
-        </motion.div>
+        {/* Section Heading  */}
+        <div className="mb-12 lg:mb-20 text-center lg:text-left">
+          <ScrollAnimate direction="left" duration={0.6}>
+            <p className="text-xs font-semibold text-[var(--accent)] tracking-[0.25em] uppercase mb-3">
+              CORE TECHNOLOGIES
+            </p>
+            <h2 className="font-display font-bold text-4xl md:text-6xl tracking-tight text-[var(--primary-text)]">
+              Tech stack<span className="text-[var(--accent)]"> & tools</span>
+            </h2>
+          </ScrollAnimate>
+        </div>
 
         {/* Dynamic Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          <div className="lg:col-span-5">
+            {/* left side  */}
+            <ScrollAnimate direction="up" duration={0.6}>
+              <div className="lg:col-span-5 flex flex-col md:flex-row lg:flex-col justify-center gap-3 lg:space-y-4 lg:gap-0">
+                {skillCategories.map((category) => {
+                  const isActive = category.id === activeTab;
+                  return (
+                    <button
+                      key={category.id}
+                      onClick={() => handleTabClick(category.id)}
+                      className={`w-full text-left p-4 lg:p-6 rounded-xl lg:rounded-2xl transition-all duration-500 relative overflow-hidden flex flex-col group ${isActive
+                        ? "bg-[var(--section-bg)] border border-[var(--accent)]/40 shadow-lg lg:shadow-xl"
+                        : "bg-[var(--section-bg)]/20 border border-[var(--secondary-text)]/5 lg:bg-transparent lg:border-transparent hover:bg-[var(--section-bg)]/30"
+                        }`}
+                    >
+                      {/* Active Indicator Line */}
+                      <div
+                        className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--accent)] transition-transform duration-500 hidden lg:block ${isActive ? "scale-y-100" : "scale-y-0 group-hover:scale-y-50"
+                          }`}
+                      />
 
-          {/* left side (Big Element 2: Pure Fade Up Entry for Left Container) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-            className="lg:col-span-5 flex flex-col md:flex-row lg:flex-col justify-center gap-3 lg:space-y-4 lg:gap-0"
-          >
-            {skillCategories.map((category) => {
-              const isActive = category.id === activeTab;
-              return (
-                <button
-                  key={category.id}
-                  onClick={() => handleTabClick(category.id)}
-                  className={`w-full text-left p-4 lg:p-6 rounded-xl lg:rounded-2xl transition-all duration-500 relative overflow-hidden flex flex-col group ${isActive
-                    ? "bg-[var(--section-bg)] border border-[var(--accent)]/40 shadow-lg lg:shadow-xl"
-                    : "bg-[var(--section-bg)]/20 border border-[var(--secondary-text)]/5 lg:bg-transparent lg:border-transparent hover:bg-[var(--section-bg)]/30"
-                    }`}
-                >
-                  {/* Active Indicator Line */}
-                  <div
-                    className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--accent)] transition-transform duration-500 hidden lg:block ${isActive ? "scale-y-100" : "scale-y-0 group-hover:scale-y-50"
-                      }`}
-                  />
+                      <span className={`text-[10px] lg:text-xs font-mono uppercase tracking-wider mb-0.5 lg:mb-1 transition-colors duration-300 ${isActive ? "text-[var(--accent)]" : "text-[var(--secondary-text)]/60"
+                        }`}>
+                        {category.badge}
+                      </span>
 
-                  <span className={`text-[10px] lg:text-xs font-mono uppercase tracking-wider mb-0.5 lg:mb-1 transition-colors duration-300 ${isActive ? "text-[var(--accent)]" : "text-[var(--secondary-text)]/60"
-                    }`}>
-                    {category.badge}
-                  </span>
+                      <h3 className="font-display font-bold text-base lg:text-2xl text-[var(--primary-text)] mb-1 lg:mb-2">
+                        {category.title}
+                      </h3>
 
-                  <h3 className="font-display font-bold text-base lg:text-2xl text-[var(--primary-text)] mb-1 lg:mb-2">
-                    {category.title}
-                  </h3>
+                      {/* Hidden description on mobile */}
+                      <p className="text-sm text-[var(--secondary-text)] font-light leading-relaxed max-w-sm hidden lg:line-clamp-2">
+                        {category.description}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
+            </ScrollAnimate>
+          </div>
 
-                  {/* Hidden description on mobile */}
-                  <p className="text-sm text-[var(--secondary-text)] font-light leading-relaxed max-w-sm hidden lg:line-clamp-2">
-                    {category.description}
-                  </p>
-                </button>
-              );
-            })}
-          </motion.div>
+          {/* right side Box  */}
+          <div id="tech-showcase-box" className="lg:col-span-7 scroll-mt-24">
+            <ScrollAnimate direction="up" duration={0.7}>
+              <div className="bg-[var(--section-bg)]/40 backdrop-blur-xl border border-[var(--secondary-text)]/10 rounded-3xl p-6 md:p-8 lg:p-12 flex flex-col justify-start min-h-[420px] sm:min-h-[360px] lg:h-[500px] relative shadow-2xl overflow-hidden">
 
-          {/* right side Box (Big Element 3: Fade Up for Complete Showcase Box) */}
-          <motion.div
-            id="tech-showcase-box"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-            className="lg:col-span-7 bg-[var(--section-bg)]/40 backdrop-blur-xl border border-[var(--secondary-text)]/10 rounded-3xl p-6 md:p-8 lg:p-12 flex flex-col justify-start min-h-[420px] sm:min-h-[360px] lg:h-[500px] relative shadow-2xl overflow-hidden scroll-mt-24"
-          >
+                {/* Grid Lines */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] rounded-3xl pointer-events-none" />
 
-            {/* Grid Lines */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] rounded-3xl pointer-events-none" />
-
-            {/* Header Section  */}
-            <div className="relative z-10 flex items-center justify-between border-b border-[var(--secondary-text)]/10 pb-4 lg:pb-6 mb-6 lg:mb-8 w-full">
-              <div className="font-mono text-[10px] lg:text-xs text-[var(--secondary-text)]/60 uppercase tracking-widest">
+                {/* Header Section  */}
+                <div className="relative z-10 flex items-center justify-between border-b border-[var(--secondary-text)]/10 pb-4 lg:pb-6 mb-6 lg:mb-8 w-full">
+                  <div className="font-mono text-[10px] lg:text-xs text-[var(--secondary-text)]/60 uppercase tracking-widest">
                 // Technologies integrated
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-[9px] text-[var(--accent)] tracking-wider block lg:hidden">TAP TO EFFECT</span>
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              </div>
-            </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[9px] text-[var(--accent)] tracking-wider block lg:hidden">TAP TO EFFECT</span>
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  </div>
+                </div>
 
-            {/* Skills Grid Wrapper (Kept Exactly 100% Original With Raw CSS Keyframe) */}
-            <div
-              key={activeTab}
-              className="relative z-10 w-full flex-1 overflow-y-auto pr-1"
-              style={{
-                animation: 'portfolioFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards'
-              }}
-            >
-              <style>{`
+                {/* Skills Grid Wrapper  */}
+                <div
+                  key={activeTab}
+                  className="relative z-10 w-full flex-1 overflow-y-auto pr-1"
+                  style={{
+                    animation: 'portfolioFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards'
+                  }}
+                >
+                  <style>{`
                 @keyframes portfolioFadeIn {
                   from { opacity: 0; transform: translateY(4px); }
                   to { opacity: 1; transform: translateY(0); }
                 }
               `}</style>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 auto-rows-max px-1">
-                {currentCategory?.skills.map((skill, sIndex) => (
-                  <div
-                    key={sIndex}
-                    style={{ "--brand-color": skill.color }}
-                    className="flex items-center justify-between p-3.5 lg:p-4 mx-0.5 sm:mx-1 bg-[var(--primary-bg)]/80 rounded-xl transition-all duration-300 cursor-default group 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 auto-rows-max px-1">
+                    {currentCategory?.skills.map((skill, sIndex) => (
+                      <div
+                        key={sIndex}
+                        style={{ "--brand-color": skill.color }}
+                        className="flex items-center justify-between p-3.5 lg:p-4 mx-0.5 sm:mx-1 bg-[var(--primary-bg)]/80 rounded-xl transition-all duration-300 cursor-default group 
 
                     border border-[var(--brand-color)]/25
  
@@ -182,36 +170,36 @@ export default function Skills() {
                     dark:hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] 
  
                     hover:shadow-[4px_4px_16px_rgba(0,0,0,0.06)] dark:hover:shadow-none"
-                  >
-                    <div className="flex items-center gap-3.5">
-                      <div
-                        style={{ backgroundColor: skill.color }}
-                        className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_var(--brand-color)] transition-transform duration-300 group-hover:scale-125 group-active:scale-125"
-                      />
-                      <span className="text-sm md:text-base font-medium text-[var(--primary-text)] group-hover:translate-x-1 transition-transform duration-300">
-                        {skill.name}
-                      </span>
-                    </div>
+                      >
+                        <div className="flex items-center gap-3.5">
+                          <div
+                            style={{ backgroundColor: skill.color }}
+                            className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_var(--brand-color)] transition-transform duration-300 group-hover:scale-125 group-active:scale-125"
+                          />
+                          <span className="text-sm md:text-base font-medium text-[var(--primary-text)] group-hover:translate-x-1 transition-transform duration-300">
+                            {skill.name}
+                          </span>
+                        </div>
 
-                    <span className="text-[10px] font-mono text-[var(--secondary-text)]/30 uppercase opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
-                      Active
-                    </span>
+                        <span className="text-[10px] font-mono text-[var(--secondary-text)]/30 uppercase opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
+                          Active
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Bottom Tech */}
+                <div className="relative z-10 border-t border-[var(--secondary-text)]/10 pt-4 lg:pt-6 mt-6 flex items-center justify-between text-[10px] lg:text-xs font-mono text-[var(--secondary-text)]/50 w-full">
+                  <span>SYSTEM: READY</span>
+                  <span>STACK_ID: {currentCategory?.id.toUpperCase()}</span>
+                </div>
               </div>
-            </div>
+            </ScrollAnimate>
 
-            {/* Bottom Tech */}
-            <div className="relative z-10 border-t border-[var(--secondary-text)]/10 pt-4 lg:pt-6 mt-6 flex items-center justify-between text-[10px] lg:text-xs font-mono text-[var(--secondary-text)]/50 w-full">
-              <span>SYSTEM: READY</span>
-              <span>STACK_ID: {currentCategory?.id.toUpperCase()}</span>
-            </div>
-
-          </motion.div>
-
+          </div>
         </div>
-
       </div>
-    </section>
+    </section >
   );
 }

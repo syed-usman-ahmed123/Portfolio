@@ -63,6 +63,7 @@ body {
     z-index: 1;
   }
 
+/* slide hover */
 
   .btn-hover-slide::before {
     content: '';
@@ -89,6 +90,7 @@ body {
     transform: translateX(0);
   }
 
+  /* whatsapp hover */
   .btn-whatsapp-hover {
     position: relative;
     overflow: hidden;
@@ -98,7 +100,7 @@ body {
     background-color: transparent;
     color: var(--primary-text);
 
-    /* The fill animation - curved wave from bottom center */
+    
     &::before {
       content: "";
       position: absolute;
@@ -107,17 +109,16 @@ body {
       width: 0;
       height: 0;
       background-color: var(--primary-text);
-      /* Light mode mein dark, dark mode mein white fill hoga */
+     
       border-radius: 50%;
       transform: translateX(-50%);
       transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1), height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: -1;
     }
 
-    /* Hover state - expand to fill with curved top edge */
+   
     &:hover {
       color: var(--primary-bg) !important;
-      /* Text color invert ho jayega */
       border-color: var(--primary-text) !important;
     }
 
@@ -126,7 +127,6 @@ body {
       height: 300%;
     }
 
-    /* Core text layer setup */
     & span {
       position: relative;
       z-index: 2;

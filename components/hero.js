@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-[var(--primary-bg)]">
-      {/* Background Glowing Blobs (Pure Dynamic Colors) */}
+      {/* Background Glowing Blobs */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-[var(--accent)] opacity-10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-[var(--secondary-text)] opacity-10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
@@ -14,7 +14,7 @@ export default function Hero() {
 
           {/* Left Content Side */}
           <div>
-            {/* 1. Main Heading (Fixed & Single Tag) */}
+            {/* 1. Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Hero() {
               Hi, I'm <span className="text-[var(--accent)]">Syed Usman Ahmed</span>
             </motion.h1>
 
-            {/* 2. Description Paragraph (Heading ke thoda baad smoothly fade-in hoga) */}
+            {/* 2. Description  */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function Hero() {
               </strong> I build clean, fast, and fully responsive websites using modern code (Next.js, Tailwind CSS) and CMS platforms like WordPress (Elementor) and Shopify.
             </motion.p>
 
-            {/* 3. Action Buttons (Paragraph ke baad pop-up honge) */}
+            {/* 3. Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Image Side (Smoothly side se fade-in hogi) */}
+          {/* Right Image Side  */}
           <div className="flex justify-center md:justify-end">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -76,7 +76,7 @@ export default function Hero() {
               <div className="w-full h-full rounded-3xl overflow-hidden relative">
 
                 <Image
-                  src="/usman.jpg"
+                  src="/usman.png"
                   alt="Syed Usman Ahmed"
                   fill
                   priority

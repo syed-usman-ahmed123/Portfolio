@@ -1,6 +1,5 @@
-"use client";
 import ScrollAnimate from "./scroll-animate";
-import { motion } from "framer-motion";
+
 
 export default function Experience() {
   const experiences = [
@@ -29,67 +28,58 @@ export default function Experience() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
 
           {/* Left Side  */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-            className="lg:sticky lg:top-28"
-          >
-            <ScrollAnimate>
-            <p className="text-sm font-medium text-[var(--accent)] tracking-widest uppercase mb-3">
-              My Journey
-            </p>
-            </ScrollAnimate>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-[var(--primary-text)] leading-tight">
-              Professional <span className="text-[var(--accent)]">Experience</span>
-            </h2>
-          </motion.div>
+          <div className="lg:sticky lg:top-28">
+            <ScrollAnimate direction="left" duration={0.6}>
+              <p className="text-sm font-medium text-[var(--accent)] tracking-widest uppercase mb-3">
+                My Journey
+              </p>
 
-          {/* Column 2: Right Side */}
+              <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-[var(--primary-text)] leading-tight">
+                Professional <span className="text-[var(--accent)]">Experience</span>
+              </h2>
+            </ScrollAnimate>
+          </div>
+          {/* Column 2 Right Side */}
           <div className="lg:col-span-2 relative border-l-2 border-[var(--secondary-text)]/10 pl-6 md:pl-10 space-y-8 ml-1 md:ml-3">
 
             {experiences.map((exp, index) => (
+              <div key={index} className="relative group">
 
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
-                className="relative group"
-              >
 
                 {/* Timeline Dot*/}
                 <div className="absolute -left-[31px] md:-left-[47px] top-[30px] w-3 h-3 rounded-full bg-[var(--primary-bg)] border-2 border-[var(--accent)] group-hover:bg-[var(--accent)] transition-all duration-300 z-10" />
 
-                {/* Content Card */}
-                <div className="bg-[var(--secondary-bg)]/40 backdrop-blur-sm border border-[var(--secondary-text)]/5 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/20 hover:shadow-lg hover:shadow-black/[0.02]">
+                <ScrollAnimate
+                  direction="up"
+                  duration={0.6 + index * 0.15}
+                >
+                  {/* Content Card */}
+                  <div className="bg-[var(--secondary-bg)]/40 backdrop-blur-sm border border-[var(--secondary-text)]/5 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/20 hover:shadow-lg hover:shadow-black/[0.02]">
 
-                  {/* Card Header */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-                    <div>
-                      <h3 className="font-display font-bold text-xl md:text-2xl text-[var(--primary-text)] group-hover:text-[var(--accent)] transition-colors duration-200">
-                        {exp.role}
-                      </h3>
-                      <p className="text-sm md:text-base font-medium text-[var(--secondary-text)] opacity-80 mt-0.5">
-                        {exp.company}
-                      </p>
+                    {/* Card Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                      <div>
+                        <h3 className="font-display font-bold text-xl md:text-2xl text-[var(--primary-text)] group-hover:text-[var(--accent)] transition-colors duration-200">
+                          {exp.role}
+                        </h3>
+                        <p className="text-sm md:text-base font-medium text-[var(--secondary-text)] opacity-80 mt-0.5">
+                          {exp.company}
+                        </p>
+                      </div>
+
+                      {/* Date Badge */}
+                      <span className="inline-block text-xs md:text-sm font-medium text-[var(--accent)] bg-[var(--accent)]/5 border border-[var(--accent)]/10 px-4 py-1.5 rounded-full self-start sm:self-center whitespace-nowrap">
+                        {exp.duration}
+                      </span>
                     </div>
 
-                    {/* Date Badge */}
-                    <span className="inline-block text-xs md:text-sm font-medium text-[var(--accent)] bg-[var(--accent)]/5 border border-[var(--accent)]/10 px-4 py-1.5 rounded-full self-start sm:self-center whitespace-nowrap">
-                      {exp.duration}
-                    </span>
+                    {/* Description */}
+                    <p className="text-base text-[var(--secondary-text)] font-light leading-relaxed">
+                      {exp.description}
+                    </p>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-base text-[var(--secondary-text)] font-light leading-relaxed">
-                    {exp.description}
-                  </p>
-                </div>
-
-              </motion.div>
+                </ScrollAnimate>
+              </div>
             ))}
 
           </div>

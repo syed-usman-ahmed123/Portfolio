@@ -119,7 +119,7 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Desktop Hire Me Button */}
+            {/* Desktop let's talk Button */}
             <a
               href="#contact"
               onClick={() => setActiveSection("contact")}
@@ -145,7 +145,7 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* TAILWIND DRAWER OVERLAY & PANEL */}
+      {/* tailwind drawer overlay and panel */}
       <div
         className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${mobileMenuOpen ? "visible opacity-100" : "invisible opacity-0"
           }`}
@@ -195,7 +195,7 @@ export default function Navbar() {
               </li>
             ))}
 
-            {/* Mobile Hire Me Button  */}
+            {/* Mobile let's talk Button  */}
             <li className="pt-2">
               <a
                 href="#contact"
