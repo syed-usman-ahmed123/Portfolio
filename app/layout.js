@@ -16,32 +16,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Syed Usman Ahmed | Full Stack & CMS Developer", 
-  description:
-    "Explore the portfolio of Syed Usman Ahmed. Full Stack Developer building modern web applications using Next.js, React, Node.js, and MongoDB, alongside custom WordPress and Shopify development.",
-  keywords: [
-    "Syed Usman Ahmed",
-    "Full Stack Developer",
-    "Next.js Developer",
-    "React Developer",
-    "MERN Stack Developer",
-    "WordPress Developer", 
-    "Shopify Expert",       
-    "Web Developer Pakistan",
-  ],
+  metadataBase: new URL("https://syedusmanahmed.vercel.app"),
+  title: "Syed Usman Ahmed | Full Stack & CMS Developer Karachi",
+  description: "Portfolio of Syed Usman Ahmed, a Full Stack & CMS Developer from Karachi, Pakistan specializing in Next.js, MERN, WordPress, and Shopify.",
+  keywords: ["Syed Usman Ahmed", "Usman Ahmed Developer", "Full Stack Developer Karachi", "Next.js Developer Pakistan", "Shopify Developer Karachi"],
+
   openGraph: {
     title: "Syed Usman Ahmed | Full Stack & CMS Developer",
     description: "Full Stack Developer specializing in Next.js, MERN Stack, WordPress, and Shopify solutions.",
     url: "https://syedusmanahmed.vercel.app",
     siteName: "Syed Usman Ahmed Portfolio",
-    images: [
-      {
-        url: "/og-image.png", 
-        width: 1200,
-        height: 630,
-        alt: "Syed Usman Ahmed Portfolio Preview",
-      },
-    ],
+    images: [{ url: "/og-image.png" }],
     locale: "en_US",
     type: "website",
   },
@@ -50,17 +35,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en" 
+      lang="en"
       suppressHydrationWarning
       className="h-full antialiased"
     >
-   
+
       <body className={`${geistSans.className} min-h-full flex flex-col text-[var(--primary-text)] bg-[var(--primary-bg)]`}>
         <Providers>
-          <Navbar /> 
+          <Navbar />
           <main className="flex-grow">
             <SmoothScroll>
-            {children}
+              {children}
             </SmoothScroll>
           </main>
         </Providers>
