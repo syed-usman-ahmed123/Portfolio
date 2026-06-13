@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "@/components/provider";
 import Navbar from "@/components/navbar";
 import SmoothScroll from "@/components/smooth-scroll";
+import { Analytics } from "@vercel/analytics/next"
 
 
 const geistSans = Geist({
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
             </SmoothScroll>
           </main>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
