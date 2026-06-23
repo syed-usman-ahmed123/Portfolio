@@ -7,13 +7,13 @@ export default function Experience() {
       role: "Frontend Developer",
       company: "Devstren",
       duration: "Jan 2026 - Apr 2026",
-      description: "Developed and optimized custom frontend pages for e-commerce websites on Shopify and business sites on WordPress. Focused on creating smooth, high-performance shopping experiences, custom theme tweaking, and integrating dynamic plugins to ensure seamless user browsing and responsive design across all devices.",
+      description: "Converted complex Figma designs into pixel-perfect, responsive code using HTML, CSS, JavaScript, Tailwind CSS, and Bootstrap. Handled full WordPress setups and built custom dynamic widgets in WPBakery, enabling clients to easily manage content without code. Customized Shopify themes and layouts using custom CSS, while optimizing stores for better SEO performance.",
     },
     {
       role: "Frontend Developer",
       company: "Aykays",
       duration: "Sep 2025 - Dec 2025",
-      description: "Converted complex Figma designs into live, pixel-perfect web pages using both clean custom code (HTML5, Tailwind CSS, JavaScript) and the WordPress Elementor page builder. Responsibilities included setting up layouts, handling site responsiveness, and configuring essential plugins based on project requirements.",
+      description: "Converted complex Figma designs into live and fully responsive websites using HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, and WordPress Elementor. Handled all kinds of WordPress work, including creating Custom Post Types (CPTs) and setting up dynamic plugins based on the website needs.",
     },
   ];
 

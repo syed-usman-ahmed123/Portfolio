@@ -36,7 +36,6 @@ export default function Skills() {
       description: "Setting up powerful, high-converting digital stores and business websites that are easy to manage.",
       skills: [
         { name: "WordPress", color: "#21759b" },
-        { name: "Elementor", color: "#92003B" },
         { name: "Shopify", color: "#96bf48" },
       ],
     },
