@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://syedusmanahmed.vercel.app"),
-  title: "Syed Usman Ahmed | Full Stack & CMS Developer Karachi",
+  title: "Syed Usman Ahmed | Full Stack & CMS Developer | Karachi",
   description: "Portfolio of Syed Usman Ahmed, a Full Stack & CMS Developer from Karachi, Pakistan specializing in Next.js, MERN, WordPress, and Shopify.",
   keywords: ["Syed Usman Ahmed", "Usman Ahmed Developer", "Full Stack Developer Karachi", "Next.js Developer Pakistan", "Shopify Developer Karachi"],
 
