@@ -55,7 +55,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/my-resume.pdf"
+                href="/SYED USMAN AHMED.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-[var(--secondary-text)] text-[var(--primary-text)] font-medium px-7 py-3.5 rounded-full btn-whatsapp-hover text-sm"
