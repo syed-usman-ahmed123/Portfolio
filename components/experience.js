@@ -4,13 +4,13 @@ import ScrollAnimate from "./scroll-animate";
 export default function Experience() {
   const experiences = [
     {
-      role: "Frontend Developer",
+      role: "Frontend & CMS Developer",
       company: "Devstren",
       duration: "Jan 2026 - Apr 2026",
       description: "Converted complex Figma designs into pixel-perfect, responsive code using HTML, CSS, JavaScript, Tailwind CSS, and Bootstrap. Handled full WordPress setups and built custom dynamic widgets in WPBakery, enabling clients to easily manage content without code. Customized Shopify themes and layouts using custom CSS, while optimizing stores for better SEO performance.",
     },
     {
-      role: "Frontend Developer",
+      role: "Frontend & CMS Developer",
       company: "Aykays",
       duration: "Sep 2025 - Dec 2025",
       description: "Converted complex Figma designs into live and fully responsive websites using HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, and WordPress Elementor. Handled all kinds of WordPress work, including creating Custom Post Types (CPTs) and setting up dynamic plugins based on the website needs.",
