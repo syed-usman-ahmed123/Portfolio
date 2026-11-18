@@ -13,8 +13,16 @@ export default function ProjectsGridSection() {
     };
 
     const projectsData = [
-        {
+         {
             id: 1,
+            title: "Typing Speed Game",
+            description: "A clean and responsive Typing Speed Web App built using <span class='text-[var(--accent)] font-semibold'>HTML</span>, <span class='text-[var(--accent)] font-semibold'>Tailwind CSS</span>, and <span class='text-[var(--accent)] font-semibold'>JavaScript</span>.",
+            liveUrl: "https://usmantypinggame.netlify.app/",
+            githubUrl: "https://github.com/syed-usman-ahmed123/Typing-Spedd-Web-App",
+            image: "/typing.png"
+        },
+        {
+            id: 2,
             title: "Vortex Threads",
             description: "A custom streetwear  e-commerce store built with <span class='text-[var(--accent)] font-semibold'>Shopify</span> using <span class='text-[var(--accent)] font-semibold'>Liquid</span>,  <span class='text-[var(--accent)] font-semibold'>Schema</span>, <span class='text-[var(--accent)] font-semibold'>HTML</span>, <span class='text-[var(--accent)] font-semibold'>CSS</span>, and <span class='text-[var(--accent)] font-semibold'>JS</span> featuring <span class='text-[var(--accent)] font-semibold'>variable products</span> and custom variant swatches.",
             liveUrl: "https://vortex-threads-pohacfwx.myshopify.com/",
@@ -24,7 +32,7 @@ export default function ProjectsGridSection() {
             image: "/v-t.png"
         },
         {
-            id: 2,
+            id: 3,
             title: "Age Calculator App",
             description: "A clean and responsive age calculator built using <span class='text-[var(--accent)] font-semibold'>HTML</span>, <span class='text-[var(--accent)] font-semibold'>Tailwind CSS</span>, and <span class='text-[var(--accent)] font-semibold'>JavaScript</span>.",
             liveUrl: "https://usmanagecalculator.netlify.app/",
@@ -32,7 +40,7 @@ export default function ProjectsGridSection() {
             image: "/age calculator 1.png"
         },
         {
-            id: 3,
+            id: 4,
             title: "Twitter / X UI Clone",
             description: "A pixel-perfect frontend replica of Twitter/X built using <span class='text-[var(--accent)] font-semibold'>HTML</span> and <span class='text-[var(--accent)] font-semibold'>Tailwind CSS</span> to demonstrate complex responsive layouts.",
             liveUrl: "https://usmancodertwitterclone.netlify.app/",
@@ -40,19 +48,13 @@ export default function ProjectsGridSection() {
             image: "/twitter-clone.png"
         },
         {
-            id: 4,
+            id: 5,
             title: "Apex Apparel",
             description: "A custom e-commerce store built using <span class='text-[var(--accent)] font-semibold'>WordPress</span>, <span class='text-[var(--accent)] font-semibold'>WooCommerce</span>, and <span class='text-[var(--accent)] font-semibold'>Elementor</span> featuring <span class='text-[var(--accent)] font-semibold'>variable products</span>.",
             liveUrl: "https://dev-apex-apparel.pantheonsite.io/",
             image: "/dev apex.png"
         },
-        {
-            id: 5,
-            title: "Driven For Growth Clone",
-            description: "A professional corporate clone website built using <span class='text-[var(--accent)] font-semibold'>WordPress</span> and <span class='text-[var(--accent)] font-semibold'>Elementor</span> with custom layouts.",
-            liveUrl: "https://usmancoderdrivenclone.free.nf/",
-            image: "/d-1.png"
-        },
+  
         {
             id: 6,
             title: "URL Shortener App",
